@@ -15,7 +15,7 @@ export const Layout = ({ children }) => {
           <button onClick={() => navigate('/post')} className='w-[180px] bg-[#1D9bf0] px-8 py-3 rounded-[30px] text-2xl font-bold'>post</button>
         </div>
       </div>
-      <div className="">{children}</div>
+      <div className="w-2/3">{children}</div>
     </div>
   )
 }
