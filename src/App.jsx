@@ -9,7 +9,6 @@ function App() {
     <Layout>
       <div className="w-1/2">
         <Contents />
-
       </div>
     </Layout>
   )
