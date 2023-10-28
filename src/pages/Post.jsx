@@ -59,19 +59,17 @@ export const Post = () => {
     const updatedContents = [...contents, newPost];
     setContents(updatedContents);
 
-    // Save updated content to localStorage
     localStorage.setItem('content', JSON.stringify(updatedContents));
 
-    // Reset the form fields
     setNewPost({ author: '', avatar: '', content: '' });
   };
 
   return (
     <Layout>
-      <div>
-      <h1>Post Form</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <div className="p-5 w-1/2">
+      <h1 className="text-xl font-bold">Post Form</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-y-3">
+        <div className="w-full flex justify-between">
           <label htmlFor="author">Author:</label>
           <input
             type="text"
@@ -81,7 +79,7 @@ export const Post = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className="w-full flex justify-between">
           <label htmlFor="avatar">Avatar URL:</label>
           <input
             type="text"
@@ -91,7 +89,7 @@ export const Post = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className="w-full flex justify-between">
           <label htmlFor="content">Content:</label>
           <textarea
             id="content"
@@ -100,7 +98,7 @@ export const Post = () => {
             onChange={handleInputChange}
           />
         </div>
-        <button type="submit">Add Post</button>
+        <button type="submit" className="my-3 bg-[#1D9bf0] px-8 py-1 rounded-[30px] text-lg font-bold">Add Post</button>
       </form>
     </div>
     </Layout>

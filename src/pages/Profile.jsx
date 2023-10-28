@@ -32,7 +32,6 @@ export const Profile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Save data to localStorage
     localStorage.setItem('profileData', JSON.stringify(profileData));
   };
 
