@@ -1,34 +1,44 @@
 import Elon from '../assets/elon.jpeg';
-
-const contents = [
-  {
-    author: 'Elon Musk',
-    avatar: Elon,
-    content: 'I’m so tired of hearing backend devs complain that front end devs aren’t real devs. Like what do you even do these days just manage the passwords for third party services and wear light jeans or?'
-  },
-  {
-    author: 'Elon Musk',
-    avatar: Elon,
-    content: 'I’m so tired of hearing backend devs complain that front end devs aren’t real devs. Like what do you even do these days just manage the passwords for third party services and wear light jeans or?'
-  },
-  {
-    author: 'Elon Musk',
-    avatar: Elon,
-    content: 'I’m so tired of hearing backend devs complain that front end devs aren’t real devs. Like what do you even do these days just manage the passwords for third party services and wear light jeans or?'
-  },
-  {
-    author: 'Elon Musk',
-    avatar: Elon,
-    content: 'I’m so tired of hearing backend devs complain that front end devs aren’t real devs. Like what do you even do these days just manage the passwords for third party services and wear light jeans or?'
-  },
-  {
-    author: 'Elon Musk',
-    avatar: Elon,
-    content: 'I’m so tired of hearing backend devs complain that front end devs aren’t real devs. Like what do you even do these days just manage the passwords for third party services and wear light jeans or?'
-  },
-]
+import { useEffect, useState } from 'react';
 
 export const Contents = () => {
+
+  const initialContent = [
+    {
+      author: 'Elon Musk',
+      avatar: Elon,
+      content: 'I’m so tired of hearing backend devs complain that front end devs aren’t real devs. Like what do you even do these days just manage the passwords for third party services and wear light jeans or?'
+    },
+    {
+      author: 'Elon Musk',
+      avatar: Elon,
+      content: 'I’m so tired of hearing backend devs complain that front end devs aren’t real devs. Like what do you even do these days just manage the passwords for third party services and wear light jeans or?'
+    },
+    {
+      author: 'Elon Musk',
+      avatar: Elon,
+      content: 'I’m so tired of hearing backend devs complain that front end devs aren’t real devs. Like what do you even do these days just manage the passwords for third party services and wear light jeans or?'
+    },
+    {
+      author: 'Elon Musk',
+      avatar: Elon,
+      content: 'I’m so tired of hearing backend devs complain that front end devs aren’t real devs. Like what do you even do these days just manage the passwords for third party services and wear light jeans or?'
+    },
+    {
+      author: 'Elon Musk',
+      avatar: Elon,
+      content: 'I’m so tired of hearing backend devs complain that front end devs aren’t real devs. Like what do you even do these days just manage the passwords for third party services and wear light jeans or?'
+    },
+  ]
+  const [contents, setContents] = useState(initialContent);
+
+  useEffect(() => {
+    const storedContent = localStorage.getItem('content');
+    if (storedContent) {
+      setContents(JSON.parse(storedContent));
+    }
+  }, [])
+
   return (
     <div className="flex flex-col gap-y-3">
         {
